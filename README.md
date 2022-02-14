@@ -19,7 +19,7 @@ Used for user interaction with the machine and interaction between the recycling
 ## Technologies
 * React
 * Node.js
-* Solidity
+* Rust
 * Docker
 
 ## Project developed with
@@ -31,6 +31,7 @@ Used for user interaction with the machine and interaction between the recycling
 ## Prerequisites
 * [Node 12+](https://nodejs.org/en/download/)
 * [Yarn](https://classic.yarnpkg.com/en/docs/install/)
+* [Rust and near-cli](https://www.near-sdk.io/zero-to-hero/basics/set-up-skeleton)
 * Raspberry Pi 3B/3B+/4B, breadboard, LEDs, buttons (if not available, see [the option without Raspberry Pi](https://github.com/aleksandargolubovic/NEAR_Metabuild/tree/main/recycling_machine_emulator#option-without-a-raspberry-pi))
 * Docker
 
@@ -40,6 +41,12 @@ Used for user interaction with the machine and interaction between the recycling
 * Since QR scanner is using camera, it needs to be [enabled in Chrome for (Local) Unsecure Origins](https://medium.com/@Carmichaelize/enabling-the-microphone-camera-in-chrome-for-local-unsecure-origins-9c90c3149339)
 
 ## Initial Setup
+
+###Build and deploy smart contract
+* Go to /recycling_machine/contracts and run build.sh
+* Open /recycling_machine/contracts/deploy_and_init.sh and set preferred values of NEAR_ACCT and PARENT_ACCT account ids
+* Run deploy_and_init.sh script
+* Go to /recycling_machine/server and create .env file (please see .env.example for reference). Set proper ACCOUNT_ID and PRIVATE_KEY information.
 
 ## How to run
 
