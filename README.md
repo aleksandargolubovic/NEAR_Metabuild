@@ -1,4 +1,4 @@
-# NEAR Metabuild Hackathon - Crypto Recycling Machine
+# Crypto Recycling Machine - NEAR Metabuild Hackathon
 
 <div align="center">
     <img src = "img.jpeg" width = "800px"/>
