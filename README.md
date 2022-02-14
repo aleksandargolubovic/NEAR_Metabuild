@@ -23,6 +23,8 @@ Used for user interaction with the machine and interaction between the recycling
 * Docker
 
 ## Project developed with
+* near-sdk
+* near-api-js
 
 ## Quick start
 
@@ -35,17 +37,16 @@ Used for user interaction with the machine and interaction between the recycling
 ## Recommendations for client side of the app
 * The application is optimised for display with 16:10 ratio
 * Recommendation is to run it with Chrome browser
-* Since QR scanner is using cammera, it needs to be [enabled in Chrome for (Local) Unsecure Origins](https://medium.com/@Carmichaelize/enabling-the-microphone-camera-in-chrome-for-local-unsecure-origins-9c90c3149339)
+* Since QR scanner is using camera, it needs to be [enabled in Chrome for (Local) Unsecure Origins](https://medium.com/@Carmichaelize/enabling-the-microphone-camera-in-chrome-for-local-unsecure-origins-9c90c3149339)
 
 ## Initial Setup
 
-
 ## How to run
 
-Recycling machine services and Raspberry Pi emulator should be run in the same local network (It's not mandatory, but it makes the life much easier).
+Recycling machine services and Raspberry Pi emulator should be run in the same local network (It's not mandatory, but it makes life much easier).
 First we need to start recycling machine services, and then the emulator, which needs to know the IP address of the server.
 
-- To start the recycling machine services, go to /RoadToWeb3/recycling_machine/ directory and run the following:
+- To start the recycling machine services, go to /recycling_machine directory and run the following:
 ```bash
 docker-compose build
 docker-compose up
@@ -65,4 +66,4 @@ yarn start [backend-service-ip-address]:3050/api
 
 
 ## Future work/TODO
-Implement a back office web3 app, which will be used to manage the recycling machine contracts. It will allow administrator to deploy a new Recycling Machine contracts, manage existing ones and follow theirs statistics. For example, admin could see the balance, total amount donated, number of payouts, etc.
+Implement a back office app, which will be used to manage the recycling machine contracts. It will allow administrator to deploy a new Recycling Machine contracts, manage existing ones and follow theirs statistics. For example, admin could see the balance, total amount donated, number of payouts, etc.
