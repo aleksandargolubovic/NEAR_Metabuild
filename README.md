@@ -7,7 +7,7 @@
 ## Crypto Recycling Machine Overview
 Crypto Recycling Machine is a project developed for Near Metabuild Hackathon. It gives an opportunity to recycle different kinds of bottles and get paid in crypto currency.
 
-The project consists of 2 units:
+The project consists of two units:
 * ### Recycling Machine Emulator
 
 A service running on Raspberry Pi which uses a breadboard, some LEDs and buttons to simulate inserting the bottle into the recycling machine. Each button on the breadboard represents an inserting different kind of bottle: aluminium cans, glass bottles, tetra pak, or PET.
