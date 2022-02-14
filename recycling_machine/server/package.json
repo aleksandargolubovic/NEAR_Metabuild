@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@truffle/hdwallet-provider": "^1.5.1",
+    "axios": "^0.26.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "web3": "^1.6.0",
+    "near-api-js": "^0.44.2",
     "ws": "^8.2.3"
   }
 }

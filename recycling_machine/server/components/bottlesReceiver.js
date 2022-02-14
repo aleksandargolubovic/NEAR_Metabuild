@@ -1,4 +1,4 @@
-const packagePricesContract = require('../contract/packagePricesContract');
+//const packagePricesContract = require('../contract/packagePricesContract');
 
 let sessionActive = false;
 let bottleStatus = {};
@@ -12,36 +12,36 @@ const bottlePrices = {
 
 let currentBalance = 0;
 
-const setBottlePrice = (bottleType, price) => {
-  if (sessionActive) {
-    console.log("Session started");
-    return;
-  }
-  if (bottlePrices[bottleType] == undefined) {
-    console.error("Unknown bottle type");
-    return;
-  }
-  bottlePrices[bottleType] = price;
-  console.log("A new price set: ", price, " for ", bottleType, " bottles");
-}
+// const setBottlePrice = (bottleType, price) => {
+//   if (sessionActive) {
+//     console.log("Session started");
+//     return;
+//   }
+//   if (bottlePrices[bottleType] == undefined) {
+//     console.error("Unknown bottle type");
+//     return;
+//   }
+//   bottlePrices[bottleType] = price;
+//   console.log("A new price set: ", price, " for ", bottleType, " bottles");
+// }
 
-const setPrices = async () => {
-  if (!packagePricesContract) {
-    console.log("PackagePrices contract doesn't exist!");
-    return;
-  }
-  try {
-    const prices = await packagePricesContract.methods.GetPrices().call();
-    console.log(prices);
-    setBottlePrice("pet", Number(prices._pet));
-    setBottlePrice("tetra_pak", Number(prices._tetra_pak));
-    setBottlePrice("glass", Number(prices._glass));
-    setBottlePrice("aluminium", Number(prices._aluminium));
-    console.log("A new package prices set: ", bottlePrices);
-  } catch (error) {
-    console.log(error.message);
-  }
-}
+// const setPrices = async () => {
+//   if (!packagePricesContract) {
+//     console.log("PackagePrices contract doesn't exist!");
+//     return;
+//   }
+//   try {
+//     const prices = await packagePricesContract.methods.GetPrices().call();
+//     console.log(prices);
+//     setBottlePrice("pet", Number(prices._pet));
+//     setBottlePrice("tetra_pak", Number(prices._tetra_pak));
+//     setBottlePrice("glass", Number(prices._glass));
+//     setBottlePrice("aluminium", Number(prices._aluminium));
+//     console.log("A new package prices set: ", bottlePrices);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
 
 const restartSession = () => {
   console.log("session restart")
@@ -79,4 +79,4 @@ const getCurrentBalance = () => {
   return currentBalance;
 }
 
-module.exports = {restartSession, insertBottle, getAll, getCurrentBalance, setPrices};
+module.exports = {restartSession, insertBottle, getAll, getCurrentBalance};

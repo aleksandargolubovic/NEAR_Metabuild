@@ -28,10 +28,10 @@ const PayOut = () => {
   const calculateTokenBalance = async () => {
     console.log("Params ", paymentOption);
     let price;
-    if (paymentOption === 'stableCoin')
-      price = await axios.get("/api/getUsdtUsdPrice");
-    else
-      price = await axios.get("/api/getMaticUsdPrice");
+    // if (paymentOption === 'stableCoin')
+    //   price = await axios.get("/api/getUsdtUsdPrice");
+    // else
+      price = await axios.get("/api/getNEARUsdPrice");
     console.log(price.data);
     setTokenBalance((currentBalance * (10 ** 6)) / (price.data));
   }

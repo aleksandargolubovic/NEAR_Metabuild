@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 const PrepareMachine = async () => {
-  await setPrices();
+  //await setPrices();
   restartSession();
 }
 

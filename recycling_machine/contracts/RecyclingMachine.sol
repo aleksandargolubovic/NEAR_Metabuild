@@ -89,7 +89,7 @@ contract RecyclingMachine {
       return uint256(answer);
     }
     
-    function payOut(address payable receiver, uint256  USCentAmount, bool isStableCoin) payable restricted public {
+    function payOut(address payable receiver, uint256 USCentAmount, bool isStableCoin) payable restricted public {
       uint256 amountInWei;
       if (isStableCoin) {
         amountInWei = USCentAmount * 10**24 / getUsdtUsdPrice();
