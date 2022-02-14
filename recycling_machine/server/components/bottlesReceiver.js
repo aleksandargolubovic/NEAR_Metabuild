@@ -1,5 +1,3 @@
-//const packagePricesContract = require('../contract/packagePricesContract');
-
 let sessionActive = false;
 let bottleStatus = {};
 
@@ -12,18 +10,18 @@ const bottlePrices = {
 
 let currentBalance = 0;
 
-// const setBottlePrice = (bottleType, price) => {
-//   if (sessionActive) {
-//     console.log("Session started");
-//     return;
-//   }
-//   if (bottlePrices[bottleType] == undefined) {
-//     console.error("Unknown bottle type");
-//     return;
-//   }
-//   bottlePrices[bottleType] = price;
-//   console.log("A new price set: ", price, " for ", bottleType, " bottles");
-// }
+const setBottlePrice = (bottleType, price) => {
+  if (sessionActive) {
+    console.log("Session started");
+    return;
+  }
+  if (bottlePrices[bottleType] == undefined) {
+    console.error("Unknown bottle type");
+    return;
+  }
+  bottlePrices[bottleType] = price;
+  console.log("A new price set: ", price, " for ", bottleType, " bottles");
+}
 
 // const setPrices = async () => {
 //   if (!packagePricesContract) {
@@ -31,7 +29,7 @@ let currentBalance = 0;
 //     return;
 //   }
 //   try {
-//     const prices = await packagePricesContract.methods.GetPrices().call();
+//     const prices = await packagePricesContract.GetPrices();
 //     console.log(prices);
 //     setBottlePrice("pet", Number(prices._pet));
 //     setBottlePrice("tetra_pak", Number(prices._tetra_pak));
