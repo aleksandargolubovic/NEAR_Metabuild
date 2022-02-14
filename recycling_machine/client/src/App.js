@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-//import { createContext, useContext } from "react";
 import './App.css';
-// import axios from 'axios';
-// import { Button, Container, Card, Row } from 'react-bootstrap'
-// import { w3cwebsocket as W3CWebSocket } from "websocket";
 import PayoutOptions from "./components/payoutOptions";
 import PayOut from "./components/payOut";
 import Donate from './components/donate';

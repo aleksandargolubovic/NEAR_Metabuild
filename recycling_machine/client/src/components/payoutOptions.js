@@ -3,8 +3,7 @@ import { Container, Row, Card, Button } from 'react-bootstrap'
 import AppContext from '../appContext';
 import { useNavigate } from "react-router-dom";
 
-import matic from '../img/polygon-matic-logo.svg';
-import usdt from '../img/tether-usdt-logo.svg';
+import near from '../img/near-protocol-near-logo.svg';
 import donate from '../img/donation-logo.svg';
 
 import "./payout.css"
@@ -28,17 +27,10 @@ const PayoutOptions = () => {
           <h5>Please choose a payment option</h5>
         </Row>
         <Row>
-          <Card style={{ cursor: "pointer", backgroundColor: '#8846e6' }}
-            onClick={() => { navigate("/payout/matic"); }}>
+          <Card style={{ cursor: "pointer", backgroundColor: '#000000' }}
+            onClick={() => { navigate("/payout/near"); }}>
             <Card.Body className='cardBody'>
-              <Card.Img src={matic} />
-            </Card.Body>
-          </Card>
-
-          <Card style={{ cursor: "pointer", backgroundColor: '#50af95' }}
-            onClick={() => { navigate("/payout/stableCoin"); }}>
-            <Card.Body className='cardBody'>
-              <Card.Img src={usdt} />
+              <Card.Img src={near} />
             </Card.Body>
           </Card>
 

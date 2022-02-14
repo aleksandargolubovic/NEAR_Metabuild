@@ -6,7 +6,8 @@ import { Container, Row, Card, Spinner } from 'react-bootstrap'
 import AppContext from '../appContext';
 import { useParams, useNavigate } from 'react-router-dom'
 
-const addressRegex = /0x[a-fA-F0-9]{40}/;
+const addressRegex = /^(([a-z\d]+[\-_])*[a-z\d]+\.)*([a-z\d]+[\-_])*[a-z\d]+$/;
+///0x[a-fA-F0-9]{40}/; 
 const States = {
   BEGIN: 'begin',
   ADDRESS_READ: 'addressRead',
@@ -31,9 +32,9 @@ const PayOut = () => {
     // if (paymentOption === 'stableCoin')
     //   price = await axios.get("/api/getUsdtUsdPrice");
     // else
-      price = await axios.get("/api/getNEARUsdPrice");
+    price = await axios.get("/api/getNEARUsdPrice");
     console.log(price.data);
-    setTokenBalance((currentBalance * (10 ** 6)) / (price.data));
+    setTokenBalance((currentBalance / 100) / (price.data));
   }
 
   useEffect(() => {
@@ -80,10 +81,10 @@ const PayOut = () => {
   const amountInformation = () => {
     return (
       <div>
-        <h2>Total amount to receive on Mumbai network</h2>
+        <h2>Total amount to receive on NEAR network</h2>
         <Card className='amount' style={{ width: 'fit-content' }}>
           <Card.Body className='cardBody'>
-            <h3> {tokenBalance.toFixed(8)} {paymentOption === 'stableCoin' ? 'USDT' : 'MATIC'} </h3>
+            <h3> {tokenBalance.toFixed(8)} {paymentOption === 'stableCoin' ? 'USDT' : 'NEAR'} </h3>
           </Card.Body>
         </Card>
       </div>
@@ -121,7 +122,7 @@ const PayOut = () => {
           {amountInformation()}
           <Container>
             <Row>
-              <h5>Your address:</h5>
+              <h5>Your account id:</h5>
             </Row>
             <Row>
               <Card className='amount' style={{ width: 'fit-content' }}>

@@ -1,44 +1,39 @@
 const nearAPI = require("near-api-js");
+require('dotenv').config();
+// creates keyStore from an environment variable
 
-// creates keyStore from a provided file
-// you will need to pass the location of the .json key pair
-
-const { KeyPair, keyStores } = require("near-api-js");
-const fs = require("fs");
-const homedir = require("os").homedir();
-
-const ACCOUNT_ID = "recyclingmachine.golubovic.testnet";  // NEAR account tied to the keyPair
-const NETWORK_ID = "testnet";
-// path to your custom keyPair location (ex. function access key for example account)
-const KEY_PATH = '/.near-credentials/testnet/recyclingmachine.golubovic.testnet.json';
-
-const credentials = JSON.parse(fs.readFileSync(homedir + KEY_PATH));
+const { keyStores, KeyPair } = nearAPI;
 const keyStore = new keyStores.InMemoryKeyStore();
-keyStore.setKey(NETWORK_ID, ACCOUNT_ID, KeyPair.fromString(credentials.private_key));
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+// creates a public / private key pair using the provided private key
+const keyPair = KeyPair.fromString(PRIVATE_KEY);
+const ACCOUNT_ID = process.env.ACCOUNT_ID;
+const NETWORK_ID = process.env.NETWORK_ID;
+const CONTRACT_ID = ACCOUNT_ID;
 
+keyStore.setKey(NETWORK_ID, ACCOUNT_ID, keyPair);
 
 const { connect } = nearAPI;
 
 const config = {
-  networkId: "testnet",
-  keyStore, // optional if not signing transactions
-  nodeUrl: "https://rpc.testnet.near.org",
-  walletUrl: "https://wallet.testnet.near.org",
-  helperUrl: "https://helper.testnet.near.org",
-  explorerUrl: "https://explorer.testnet.near.org",
+  networkId: NETWORK_ID,
+  keyStore,
+  nodeUrl: process.env.NODE_URL,
+  walletUrl: process.env.WALLET_URL,
+  helperUrl: process.env.HELPER_URL,
+  explorerUrl: process.env.EXPLORER_URL,
 };
 
 const getContract = async () => {
   const near = await connect(config);
-  const account = await near.account("recyclingmachine.golubovic.testnet");
+  const account = await near.account(ACCOUNT_ID);
 
   const contract = new nearAPI.Contract(
-    account, // the account object that is connecting
-    "recyclingmachine.golubovic.testnet",
+    account,
+    CONTRACT_ID,
     {
-      // name of contract you're connecting to
-      viewMethods: ["get_stats"], // view methods do not change state but usually return a value
-      changeMethods: ["set_donation_address", "payout", "donate"], // change methods modify state
+      viewMethods: ["get_stats"],
+      changeMethods: ["set_donation_address", "payout", "donate"],
       sender: account, // account object to initialize and sign transactions.
     }
   );

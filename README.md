@@ -14,7 +14,7 @@ A service running on Raspberry Pi which uses a breadboard, some LEDs and buttons
 
 * ### Recycling Machine server and client
 
-Used for user interaction with the machine and interaction between the recycling machine and smart contracts on multiple networks. The Recycling Machine supports payments on Polygon Mumbai network in MATIC tokens and Harmony Testnet network in ONE tokens. There is also an option to donate the money.
+Used for user interaction with the machine and interaction between the recycling machine and smart contracts on multiple networks. The Recycling Machine supports payments on NEAR network in $NEAR tokens. There is also an option to donate the money.
 
 ## Technologies
 * React
@@ -29,7 +29,7 @@ Used for user interaction with the machine and interaction between the recycling
 ## Prerequisites
 * [Node 12+](https://nodejs.org/en/download/)
 * [Yarn](https://classic.yarnpkg.com/en/docs/install/)
-* Raspberry Pi 3B/3B+/4B, breadboard, LEDs, buttons (if not available, see [the option without Raspberry Pi](https://github.com/dzoni-hash/RoadToWeb3/tree/main/recycling_machine_emulator#option-without-a-raspberry-pi))
+* Raspberry Pi 3B/3B+/4B, breadboard, LEDs, buttons (if not available, see [the option without Raspberry Pi](https://github.com/aleksandargolubovic/NEAR_Metabuild/tree/main/recycling_machine_emulator#option-without-a-raspberry-pi))
 * Docker
 
 ## Recommendations for client side of the app
