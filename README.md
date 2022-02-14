@@ -1,7 +1,7 @@
 # NEAR Metabuild Hackathon - Crypto Recycling Machine
 
 <div align="center">
-    <img src = "img.jpg" width = "800px"/>
+    <img src = "img.jpeg" width = "800px"/>
 </div>
 
 ## Crypto Recycling Machine Overview
