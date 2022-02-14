@@ -14,7 +14,7 @@ A service running on Raspberry Pi which uses a breadboard, some LEDs and buttons
 
 * ### Recycling Machine server and client
 
-Used for user interaction with the machine and interaction between the recycling machine and smart contracts on multiple networks. The Recycling Machine supports payments on NEAR network in $NEAR tokens. There is also an option to donate the money.
+Used for user interaction with the machine and interaction between the recycling machine and smart contracts on Near network. The Recycling Machine supports payments on NEAR testnet network in $NEAR tokens. There is also an option to donate the money.
 
 ## Technologies
 * React
