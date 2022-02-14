@@ -42,7 +42,7 @@ Used for user interaction with the machine and interaction between the recycling
 
 ## Initial Setup
 
-###Build and deploy smart contract
+### Build and deploy smart contract
 * Go to /recycling_machine/contracts and run build.sh
 * Open /recycling_machine/contracts/deploy_and_init.sh and set preferred values of NEAR_ACCT and PARENT_ACCT account ids
 * Run deploy_and_init.sh script
