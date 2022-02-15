@@ -23,24 +23,6 @@ const setBottlePrice = (bottleType, price) => {
   console.log("A new price set: ", price, " for ", bottleType, " bottles");
 }
 
-// const setPrices = async () => {
-//   if (!packagePricesContract) {
-//     console.log("PackagePrices contract doesn't exist!");
-//     return;
-//   }
-//   try {
-//     const prices = await packagePricesContract.GetPrices();
-//     console.log(prices);
-//     setBottlePrice("pet", Number(prices._pet));
-//     setBottlePrice("tetra_pak", Number(prices._tetra_pak));
-//     setBottlePrice("glass", Number(prices._glass));
-//     setBottlePrice("aluminium", Number(prices._aluminium));
-//     console.log("A new package prices set: ", bottlePrices);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// }
-
 const restartSession = () => {
   console.log("session restart")
   sessionActive = true;
